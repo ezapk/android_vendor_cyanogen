@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for Ascend.
-$(call inherit-product, device/huawei/ascend2/device_ascend2.mk)
+$(call inherit-product, device/huawei/ascend2/ascend2.mk)
 
 # Inherit some common cyanogenmod stuff.
 $(call inherit-product, vendor/cyanogen/products/common_full.mk)
@@ -12,9 +12,9 @@ PRODUCT_BRAND := Huawei
 PRODUCT_DEVICE := ascend2
 PRODUCT_MODEL := M865
 PRODUCT_MANUFACTURER := Huawei
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_DEVICE=hwm865 PRODUCT_NAME=M865 BUILD_ID=GINGERBREAD BUILD_DISPLAY_ID=GRJ90 BUILD_FINGERPRINT=Huawei/M865/hwm865:2.3.5/HuaweiM865/C153B826:user/ota-rel-keys,release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_DEVICE=hwm865 PRODUCT_NAME=M865 BUILD_ID=GINGERBREAD BUILD_DISPLAY_ID=$(shell date +%m%d%Y) BUILD_FINGERPRINT=Huawei/M865/hwm865:2.3.5/HuaweiM865/C153B826:user/ota-rel-keys,release-keys
 
-#PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/vendor/cyanogen/prelink-linux-arm-ascend.map
+#PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/vendor/cyanogen/prelink-linux-arm-ascend2.map
 
 #
 # Set ro.modversion
