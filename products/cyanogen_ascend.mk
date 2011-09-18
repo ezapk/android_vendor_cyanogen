@@ -15,7 +15,7 @@ PRODUCT_BRAND := Huawei
 PRODUCT_DEVICE := ascend
 PRODUCT_MODEL := M860
 PRODUCT_MANUFACTURER := Huawei
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=sojus BUILD_ID=GRJ90 BUILD_DISPLAY_ID=$(shell date +%m%d%Y) BUILD_FINGERPRINT=google/soju/crespo:2.3.5/GRJ90/121341:user/release-keys PRIVATE_BUILD_DESC="soju-user 2.3.5 GRJ90 121341 release-keys" BUILD_NUMBER=121341 PRODUCT_DEVICE=M860
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=sojus BUILD_ID=GRJ90 BUILD_DISPLAY_ID=$(shell date +%m%d%Y) BUILD_FINGERPRINT=google/soju/crespo:2.3.5/GRJ90/121341:user/release-keys PRIVATE_BUILD_DESC="soju-user 2.3.5 GRJ90 121341 release-keys" BUILD_NUMBER=121341 PRODUCT_DEVICE=Ascend
 
 #PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=../../../../device/huawei/ascend/include/prelink-linux-arm-ascend.map
 
@@ -24,14 +24,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=sojus BUILD_ID=GRJ90 BUILD_DISPLAY_
 #
 ifdef CYANOGEN_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CM7.2-Ascend-Nightly$(shell date +%m%d%Y)
+        ro.modversion=CM7.2-$(PRODUCT_DEVICE)-Beta-$(shell date +%m%d%Y)
 else
     ifdef CYANOGEN_RELEASE
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CM-7.2RC-Ascend
+            ro.modversion=CM-7.2RC-$(PRODUCT_DEVICE)-$(shell date +%m%d%Y)
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CM7.2-Ascend-$(shell date +%m%d%Y)
+            ro.modversion=CM7.2-$(PRODUCT_DEVICE)-$(shell date +%m%d%Y)
     endif
 endif
 

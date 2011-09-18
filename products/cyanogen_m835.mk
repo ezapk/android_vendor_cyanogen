@@ -17,7 +17,7 @@ PRODUCT_MODEL := HUAWEI-M835
 PRODUCT_MANUFACTURER := HUAWEI
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=M835 BUILD_ID=GRJ90 BUILD_DISPLAY_ID=GRJ90-$(shell date +%m%d%Y) BUILD_FINGERPRINT=google/soju/crespo:2.3.5/GRJ90/121341:user/release-keys PRIVATE_BUILD_DESC="soju-user 2.3.5 GRJ90 121341 release-keys" BUILD_NUMBER=121341 PRODUCT_DEVICE=hwm835 
 
-#PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=../../../../device/huawei/M835/include/prelink-linux-arm-M835.map
+PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=../../../../device/huawei/M835/include/prelink-linux-arm-M835.map
 
 #
 # Set ro.modversion
