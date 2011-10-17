@@ -1,8 +1,3 @@
-# Include the stock APNS config file instead of the dev one
-PRODUCT_COPY_FILES := \
-    device/lge/thunderc/files/etc/apns-conf.xml:system/etc/apns-conf.xml \
-    device/lge/thunderc/files/media/bootanimation.zip:system/media/bootanimation.zip \
-    device/lge/thunderc/files/media/somebodys.ogg:system/media/audio/ringtones/somebodys.ogg \
     $(PRODUCT_COPY_FILES)
 
 # Inherit device configuration for the thunderc.
@@ -10,9 +5,6 @@ $(call inherit-product, device/lge/thunderc/thunderc.mk)
 
 # Inherit some common cyanogenmod stuff.
 $(call inherit-product, vendor/cyanogen/products/common_full.mk)
-
-# Include FM-Radio stuff (does not work at this moment)
-$(call inherit-product, vendor/cyanogen/products/bcm_fm_radio.mk)
 
 PRODUCT_BRAND := LGE
 PRODUCT_DEVICE := thunderc
@@ -29,14 +21,14 @@ PRODUCT_PACKAGES += \
 
 ifdef CYANOGEN_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-7.2-$(PRODUCT_MODEL)-$(shell date +%m%d%Y)-NIGHTLY
+        ro.modversion=CyanogenMod-7.1.0-$(PRODUCT_MODEL)-$(shell date +%m%d%Y)-NIGHTLY
 else
     ifdef CYANOGEN_RELEASE
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CyanogenMod-7.2
+            ro.modversion=CyanogenMod-7.1.0
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CyanogenMod-7.2-$(PRODUCT_MODEL)-$(shell date +%m%d%Y)
+            ro.modversion=CyanogenMod-7.1.0-$(PRODUCT_MODEL)-$(shell date +%m%d%Y)
     endif
 endif
 
